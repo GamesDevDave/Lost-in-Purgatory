@@ -4,8 +4,10 @@ This repository has been pre-configured with a .gitignore and .gitattributes fil
 
 This project was created for Unity 2019.4.1.f1.
 
-The project has been created with a barebones folder structure and sample assets.  The settings have been optimized for best 3D quality without adding any additional packages to the project.
-For 2D projects, go to Edit -> Project Settings -> Editor and set the "Default Behaviour Mode" to 2D.  Do this at the start so that imported assets are optimized automatically.
+The project has been created with a barebones folder structure and sample assets. The settings have been setup for URP. I would only reccomend using URP if you are developing for multiple platforms or if performance takes 
+priority over quality.
+
+For 2D projects use the defalt render pipeline repo found here https://gamesgit.falmouth.ac.uk/projects/GA/repos/blank-unity-project/browse
 
 Please fork this repository, then rename and clone it to begin working on your project. 
 
