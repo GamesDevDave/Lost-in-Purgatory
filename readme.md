@@ -2,7 +2,10 @@
 
 This repository has been pre-configured with a .gitignore and .gitattributes file specific to Unity projects using git-lfs. 
 
-This project was created for Unity 2019.4.1.f1.
+This project was created for Unity 2019.4.17
+
+#### Known Issues ####
+* Shadows can not be cast on terrain. Fixed in 2020+
 
 The project has been created with a barebones folder structure and sample assets. The settings have been setup for URP. I would only reccomend using URP if you are developing for multiple platforms or if performance takes 
 priority over quality.

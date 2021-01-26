@@ -1,5 +1,6 @@
 ### Blank Unity Project URP - Changelog - June 2019 ### 
 
+* Updated project to use Unity 2019.4.17
 * Changed the repo to use URP
 * Updated project to use Unity 2019.4.1.f1.
 * Updated project to use Unity 2018.4.2.f1.
