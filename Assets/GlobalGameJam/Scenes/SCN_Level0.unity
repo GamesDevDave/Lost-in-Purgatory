@@ -152,6 +152,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &167645303 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2505485940992882627, guid: 7c455761c1a94da45ba004fbcad08032,
+    type: 3}
+  m_PrefabInstance: {fileID: 7831608156679695212}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &583872191 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4027214230760825574, guid: 7c455761c1a94da45ba004fbcad08032,
@@ -303,10 +309,12 @@ MonoBehaviour:
   item: {fileID: 737160547}
   itemRigidbody: {fileID: 0}
   temporaryParent: {fileID: 583872191}
+  cameraObject: {fileID: 167645303}
   throwForce: 600
   canHold: 1
   isHolding: 0
   distance: 0
+  rotationSpeed: 100
 --- !u!54 &737160550
 Rigidbody:
   m_ObjectHideFlags: 0
