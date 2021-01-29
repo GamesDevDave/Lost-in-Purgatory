@@ -33,14 +33,12 @@ public class SCR_PlayerMovement : MonoBehaviour
             playerVelocity.y = -2f;
         }
 
-        float xInput = Input.GetAxis("Horizontal");
-        float zInput = Input.GetAxis("Vertical");
+        float xInput = Input.GetAxisRaw("Horizontal");
+        float zInput = Input.GetAxisRaw("Vertical");
 
         Vector3 moveDirection = transform.right * xInput + transform.forward * zInput;
 
-        playerCharacterController.Move(moveDirection * speed * Time.deltaTime);
-
-        playerVelocity.y += gravity * Time.deltaTime;
+        playerCharacterController.Move(moveDirection.normalized * speed * Time.deltaTime);
 
         playerCharacterController.Move(playerVelocity * Time.deltaTime);
     }
