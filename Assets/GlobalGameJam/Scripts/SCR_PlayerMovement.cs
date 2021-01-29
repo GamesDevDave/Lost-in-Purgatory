@@ -28,9 +28,15 @@ public class SCR_PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        playerGrounded = Physics.CheckSphere(groundCheck.position, groundDistance);
+
         if (playerGrounded && playerVelocity.y < 0)
         {
-            playerVelocity.y = -2f;
+            playerVelocity.y = 0f;
+        }
+        else
+        {
+            playerVelocity.y += gravity;
         }
 
         float xInput = Input.GetAxisRaw("Horizontal");
@@ -39,7 +45,6 @@ public class SCR_PlayerMovement : MonoBehaviour
         Vector3 moveDirection = transform.right * xInput + transform.forward * zInput;
 
         playerCharacterController.Move(moveDirection.normalized * speed * Time.deltaTime);
-
         playerCharacterController.Move(playerVelocity * Time.deltaTime);
     }
 }
