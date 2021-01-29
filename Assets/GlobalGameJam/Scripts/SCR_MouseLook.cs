@@ -7,6 +7,7 @@ public class SCR_MouseLook : MonoBehaviour
     [Header("References")]
     [SerializeField] Transform playerBody;
     [SerializeField] float xRotation = 0f;
+    [SerializeField] GameObject guide;
 
     [Header("Sensitivity Settings")]
     [SerializeField] float mouseSensitivity = 100f;
@@ -28,6 +29,7 @@ public class SCR_MouseLook : MonoBehaviour
 
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         playerBody.Rotate(Vector3.up * mouseX);
+        guide.transform.rotation = transform.rotation;
     
     }
 }
