@@ -8,6 +8,7 @@ public class SCR_PlayerMovement : MonoBehaviour
     [SerializeField] CharacterController playerCharacterController;
     [SerializeField] bool playerGrounded;
     [SerializeField] Vector3 playerVelocity;
+    public GameObject cypherObject;
 
     [Header("Movement Settings")]
     [SerializeField] float speed = 12f;
