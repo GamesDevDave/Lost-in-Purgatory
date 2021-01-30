@@ -47,5 +47,12 @@ public class SCR_PlayerMovement : MonoBehaviour
 
         playerCharacterController.Move(moveDirection.normalized * speed * Time.deltaTime);
         playerCharacterController.Move(playerVelocity * Time.deltaTime);
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            Cursor.lockState = CursorLockMode.None;
+            cypherObject.SetActive(true);
+
+        }
     }
 }
