@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TeaPuzzle : MonoBehaviour
 {
-    public bool teaPoured;
+    public static bool teaPoured;
 
     // Start is called before the first frame update
     void Start()

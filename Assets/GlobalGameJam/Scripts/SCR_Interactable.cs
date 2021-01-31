@@ -38,6 +38,13 @@ public class SCR_Interactable : MonoBehaviour
                 KeyAction();
             }
         }
+        else if(gameObject.tag == "Cup") 
+        {
+            if(Input.GetMouseButtonDown(0) && guideDistance < 1 && TeaPuzzle.teaPoured)
+            {
+                TeaAction();
+            }
+        }
     }
 
     void NoteAction()
@@ -55,6 +62,11 @@ public class SCR_Interactable : MonoBehaviour
     }
 
     void KeyAction()
+    {
+        keyRetrieved = true;
+    }
+
+    void TeaAction()
     {
         keyRetrieved = true;
     }
