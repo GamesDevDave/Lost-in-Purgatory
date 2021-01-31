@@ -14,7 +14,7 @@ public class SCR_Pickup : MonoBehaviour
 
     [Header("General Variables")]
     [SerializeField] bool canHold = true;
-    [SerializeField] bool isHolding = false;
+    public bool isHolding = false;
     [SerializeField] float distance;
     [SerializeField] float rotationSpeed;
 
