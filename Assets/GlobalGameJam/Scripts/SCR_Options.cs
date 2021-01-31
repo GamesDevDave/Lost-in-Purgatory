@@ -8,7 +8,7 @@ public class SCR_Options : MonoBehaviour
     [SerializeField] TMPro.TMP_Text sensitivityText;
 
     [Header("Mouse Variables")]
-    public static float m_mouseSensitivity;
+    public static float m_mouseSensitivity = 100f;
 
     private void Update()
     {

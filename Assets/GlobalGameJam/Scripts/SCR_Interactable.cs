@@ -26,7 +26,7 @@ public class SCR_Interactable : MonoBehaviour
 
         if (gameObject.tag == "Note")
         {
-            if (Input.GetMouseButtonDown(0) && guideDistance < 1)
+            if (Input.GetMouseButtonDown(0) && guideDistance < 2)
             {
                 NoteAction();
             }

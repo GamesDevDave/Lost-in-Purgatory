@@ -11,7 +11,7 @@ public class SCR_HoldingHUD : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pickupScript = GetComponent<SCR_Pickup>();
+        pickupScript = pickupScript.GetComponent<SCR_Pickup>();
     }
 
     // Update is called once per frame
@@ -19,11 +19,11 @@ public class SCR_HoldingHUD : MonoBehaviour
     {
         if (pickupScript.isHolding)
         {
-            holdingGUI.SetActive(true);
+            holdingGUI.GetComponent<Canvas>().enabled = true;
         }
         else
         {
-            holdingGUI.SetActive(false);
+            holdingGUI.GetComponent<Canvas>().enabled = false;
         }
     }
 }

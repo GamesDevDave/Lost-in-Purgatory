@@ -14,6 +14,7 @@ public class SCR_Pickup : MonoBehaviour
 
     [Header("General Variables")]
     [SerializeField] bool canHold = true;
+    public bool isRotating;
     public bool isHolding = false;
     [SerializeField] float distance;
     [SerializeField] float rotationSpeed;
@@ -21,24 +22,39 @@ public class SCR_Pickup : MonoBehaviour
     private void Awake()
     {
         itemRigidbody = item.GetComponent<Rigidbody>();
+        isHolding = false;
     }
 
     private void Update()
     {
         ObjectRotate();
+
+        if (Input.GetMouseButtonDown(0) && distance <= 1.5f && !isHolding)
+        {
+            Debug.Log("Test");
+            isHolding = true;
+            PrepareForPickup();
+        }
+        
+        if (Input.GetMouseButtonUp(0) && isHolding)
+        {
+            isHolding = false;
+        }
+        
     }
 
     private void FixedUpdate()
     {
-
         distance = Vector3.Distance(item.transform.position, temporaryParent.transform.position);
-
-        if (distance >= 1f)
+      
+        /*
+        if (distance >= 1.5f)
         {
             isHolding = false;
         }
+        */
 
-        if (isHolding)
+        if(isHolding)
         {
             itemRigidbody.velocity = Vector3.zero;
             itemRigidbody.angularVelocity = Vector3.zero;
@@ -51,7 +67,6 @@ public class SCR_Pickup : MonoBehaviour
             }
 
         }
-
         else
         {
             objectPos = item.transform.position;
@@ -65,28 +80,21 @@ public class SCR_Pickup : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.E) && isHolding)
         {
-            Debug.Log("Rotating");
+            isRotating = true;
             cameraObject.GetComponent<SCR_MouseLook>().enabled = false;
             this.transform.Rotate((Input.GetAxis("Mouse X") * rotationSpeed * Time.fixedDeltaTime), 0, (Input.GetAxis("Mouse Y") * rotationSpeed * Time.fixedDeltaTime), Space.World);
         }
         else
         {
+            isRotating = false;
             cameraObject.GetComponent<SCR_MouseLook>().enabled = true;
         }
     }
 
-    void OnMouseDown()
+    void PrepareForPickup()
     {
-        if (distance <= 1f)
-        {
-            isHolding = true;
-            itemRigidbody.useGravity = false;
-            itemRigidbody.detectCollisions = true;
-        }
-    }
-
-    void OnMouseUp()
-    {
-        isHolding = false;
+        isHolding = true;
+        itemRigidbody.useGravity = false;
+        itemRigidbody.detectCollisions = true;
     }
 }
