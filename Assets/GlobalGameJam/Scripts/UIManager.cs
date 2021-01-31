@@ -13,7 +13,7 @@ public class UIManager : MonoBehaviour
 
     public void OnPlayPress()
     {
-        SceneManager.LoadScene("SCN_Level0", LoadSceneMode.Single);
+        SceneManager.LoadScene("SCN_Level1", LoadSceneMode.Single);
         Time.timeScale = 1;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
