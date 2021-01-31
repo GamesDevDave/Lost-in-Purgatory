@@ -14,31 +14,46 @@ public class SCR_Pickup : MonoBehaviour
 
     [Header("General Variables")]
     [SerializeField] bool canHold = true;
-    [SerializeField] bool isHolding = false;
+    [SerializeField] bool isHolding;
     [SerializeField] float distance;
     [SerializeField] float rotationSpeed;
 
     private void Awake()
     {
         itemRigidbody = item.GetComponent<Rigidbody>();
+        isHolding = false;
     }
 
     private void Update()
     {
         ObjectRotate();
+
+        if (Input.GetMouseButtonDown(0) && distance <= 1.5f && !isHolding)
+        {
+            Debug.Log("Test");
+            isHolding = true;
+            PrepareForPickup();
+        }
+        
+        if (Input.GetMouseButtonUp(0) && isHolding)
+        {
+            isHolding = false;
+        }
+        
     }
 
     private void FixedUpdate()
     {
-
         distance = Vector3.Distance(item.transform.position, temporaryParent.transform.position);
-
-        if (distance >= 1f)
+      
+        /*
+        if (distance >= 1.5f)
         {
             isHolding = false;
         }
+        */
 
-        if (isHolding)
+        if(isHolding)
         {
             itemRigidbody.velocity = Vector3.zero;
             itemRigidbody.angularVelocity = Vector3.zero;
@@ -51,7 +66,6 @@ public class SCR_Pickup : MonoBehaviour
             }
 
         }
-
         else
         {
             objectPos = item.transform.position;
@@ -75,18 +89,10 @@ public class SCR_Pickup : MonoBehaviour
         }
     }
 
-    void OnMouseDown()
+    void PrepareForPickup()
     {
-        if (distance <= 1f)
-        {
-            isHolding = true;
-            itemRigidbody.useGravity = false;
-            itemRigidbody.detectCollisions = true;
-        }
-    }
-
-    void OnMouseUp()
-    {
-        isHolding = false;
+        isHolding = true;
+        itemRigidbody.useGravity = false;
+        itemRigidbody.detectCollisions = true;
     }
 }
