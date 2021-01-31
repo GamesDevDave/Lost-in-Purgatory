@@ -16,7 +16,7 @@ public class SCR_Interactable : MonoBehaviour
     private bool displayMessage = false;
 
     [Header("Key Variables")]
-    [SerializeField] bool keyRetrieved;
+    public bool keyRetrieved;
     [SerializeField] string keyRetrievedString;
 
     // Update is called once per frame
