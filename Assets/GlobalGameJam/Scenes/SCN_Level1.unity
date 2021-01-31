@@ -740,6 +740,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 918741841}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &287891229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 287891227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad96d7ad2cc59bd478d0094f21a92873, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startMessage: '*Yawn* I should probably go check the mail.'
 --- !u!114 &287891234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1106,7 +1119,7 @@ Transform:
   m_GameObject: {fileID: 593886059}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.3, z: -0.37}
-  m_LocalScale: {x: 30.830992, y: 30.830992, z: 30.830992}
+  m_LocalScale: {x: 7.570594, y: 7.570594, z: 7.570594}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 15
