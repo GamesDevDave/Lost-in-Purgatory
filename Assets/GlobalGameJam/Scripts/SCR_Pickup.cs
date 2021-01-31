@@ -14,7 +14,8 @@ public class SCR_Pickup : MonoBehaviour
 
     [Header("General Variables")]
     [SerializeField] bool canHold = true;
-    [SerializeField] bool isHolding;
+    public bool isHolding;
+    public bool isRotating;
     [SerializeField] float distance;
     [SerializeField] float rotationSpeed;
 
@@ -79,12 +80,13 @@ public class SCR_Pickup : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.E) && isHolding)
         {
-            Debug.Log("Rotating");
+            isRotating = true;
             cameraObject.GetComponent<SCR_MouseLook>().enabled = false;
             this.transform.Rotate((Input.GetAxis("Mouse X") * rotationSpeed * Time.fixedDeltaTime), 0, (Input.GetAxis("Mouse Y") * rotationSpeed * Time.fixedDeltaTime), Space.World);
         }
         else
         {
+            isRotating = false;
             cameraObject.GetComponent<SCR_MouseLook>().enabled = true;
         }
     }
