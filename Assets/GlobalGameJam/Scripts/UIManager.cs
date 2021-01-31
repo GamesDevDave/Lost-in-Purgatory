@@ -13,15 +13,15 @@ public class UIManager : MonoBehaviour
 
     public void OnPlayPress()
     {
-        SceneManager.LoadScene("Level 1 - Playtest Level", LoadSceneMode.Single);
+        SceneManager.LoadScene("SCN_Level0", LoadSceneMode.Single);
         Time.timeScale = 1;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
 
-    public void OnOptionsPress() => SceneManager.LoadScene("", LoadSceneMode.Additive);
-    public void OnControlsPress() => SceneManager.LoadScene("", LoadSceneMode.Additive);
-    public void OnMainMeniuPress() => SceneManager.LoadScene("", LoadSceneMode.Single);
+    public void OnOptionsPress() => SceneManager.LoadScene("SCN_Options", LoadSceneMode.Additive);
+    public void OnControlsPress() => SceneManager.LoadScene("SCN_Controls", LoadSceneMode.Additive);
+    public void OnMainMeniuPress() => SceneManager.LoadScene("SCN_MainMenu", LoadSceneMode.Single);
     public void OnQuitPressTwo() => Application.Quit();
     public void OnQuitPressOne()
     {
