@@ -9,6 +9,8 @@ public class SCR_PlayerMovement : MonoBehaviour
     [SerializeField] bool playerGrounded;
     [SerializeField] Vector3 playerVelocity;
     public GameObject cypherObject;
+    private bool cypherOpen;
+    public GameObject playerCamera;
 
     [Header("Movement Settings")]
     [SerializeField] float speed = 12f;
@@ -48,11 +50,18 @@ public class SCR_PlayerMovement : MonoBehaviour
         playerCharacterController.Move(moveDirection.normalized * speed * Time.deltaTime);
         playerCharacterController.Move(playerVelocity * Time.deltaTime);
 
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.C) && !cypherOpen)
         {
             Cursor.lockState = CursorLockMode.None;
-            cypherObject.SetActive(true);
+            cypherObject.SetActive(true);    
+            cypherOpen = true;
 
+        }
+        else if(Input.GetKeyDown(KeyCode.C) && cypherOpen)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            cypherObject.SetActive(false);
+            cypherOpen = false;
         }
     }
 }

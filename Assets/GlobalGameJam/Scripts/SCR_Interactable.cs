@@ -13,6 +13,7 @@ public class SCR_Interactable : MonoBehaviour
 
     [Header("Guide Variables")]
     [SerializeField] float guideDistance;
+    private bool displayMessage = false;
 
     [Header("Key Variables")]
     [SerializeField] bool keyRetrieved;
@@ -33,7 +34,7 @@ public class SCR_Interactable : MonoBehaviour
         }
         else if (gameObject.tag == "Key")
         {
-            if (Input.GetMouseButtonDown(0) && guideDistance < 1)
+            if (Input.GetMouseButtonDown(0) && guideDistance < 2)
             {
                 KeyAction();
             }
@@ -73,9 +74,16 @@ public class SCR_Interactable : MonoBehaviour
 
     void OnGUI()
     {
-        if (keyRetrieved)
+        if (keyRetrieved && !displayMessage)
         {
-            GUI.Label(new Rect(10, 10, 200, 20), keyRetrievedString);
+            GUI.color = Color.black;
+            GUI.Label(new Rect(10, 10, 400, 20), keyRetrievedString);
+            StartCoroutine(displayCountdown());
         }
+    }
+    IEnumerator displayCountdown()
+    {
+        yield return new WaitForSeconds(5f);
+        displayMessage = true;
     }
 }
