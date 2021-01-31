@@ -15,7 +15,7 @@ public class SCR_Interactable : MonoBehaviour
     [SerializeField] float guideDistance;
 
     [Header("Key Variables")]
-    [SerializeField] bool keyRetrieved;
+    public bool keyRetrieved;
     [SerializeField] string keyRetrievedString;
 
     // Update is called once per frame
@@ -75,7 +75,7 @@ public class SCR_Interactable : MonoBehaviour
     {
         if (keyRetrieved)
         {
-            GUI.Label(new Rect(10, 10, 200, 20), keyRetrievedString);
+            GUI.Label(new Rect(10, 10, 500, 20), keyRetrievedString);
         }
     }
 }
